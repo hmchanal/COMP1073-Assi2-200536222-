@@ -1,0 +1,96 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Gallery container */
+  .gallery {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Featured image and caption */
+  figure.displayBar {
+    text-align: center;
+  }
+  
+  figure.displayBar img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  figcaption {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #007bff; /* Blue color for the caption text */
+  }
+  
+  /* Thumbnail bar */
+  ul.thumbBarImgs {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  
+  ul.thumbBarImgs li {
+    margin-right: 10px;
+  }
+  
+  ul.thumbBarImgs li:last-child {
+    margin-right: 0;
+  }
+  
+  ul.thumbBarImgs img {
+    max-width: 100px;
+    height: auto;
+    border: 2px solid #007bff; /* Blue color for the thumbnail border */
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  ul.thumbBarImgs img.active {
+    border-color: #007bff; /* Blue color for active thumbnail */
+  }
+  
+  /* Arrow button for rolling up/down the thumbnail bar */
+  div.arrow {
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff; /* Blue color for the arrow */
+  }
+  
+  /* Rolling up animation for the thumbnail bar */
+  div.thumbBarImgs.rollUp {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  
+  /* Anchor link for the full-size image source */
+  figure.displayBar a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 600px) {
+    ul.thumbBarImgs {
+      flex-wrap: nowrap;
+    }
+    ul.thumbBarImgs li {
+      flex: 0 0 auto;
+    }
+    div.thumbBarImgs.rollUp {
+      max-height: none;
+    }
+  }
